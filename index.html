@@ -25,7 +25,7 @@
 <body>
 
   <br />
-  <div class="container mt-5 mb-5">   
+  <div class="container mt-5 mb-5">
 
 
     <!-- SmartWizard html -->
@@ -68,10 +68,11 @@
       <div class="tab-content">
 
         <div id="step-1">
-          <form action="" id="my-form0"  accept-charset="utf-8">
+          <form action="" id="my-form0" accept-charset="utf-8">
             <div class="form-group p-5">
               <label id="name-label" for="name">Nombre</label>
-              <input type="text" name="name" id="name" class="form-control w-50" placeholder="Introduce tu nombre" required>
+              <input type="text" name="name" id="name" class="form-control w-50" placeholder="Introduce tu nombre"
+                required>
               <div class="help-block with-errors"></div>
               <label for="value0">Coste </label>';
               <input type="number" class="form-control w-50" id="value0" placeholder=0 value=0 required>
@@ -80,11 +81,11 @@
           </form>
         </div>
         <div id="step-2">
-          <form action="" id="my-form1"  accept-charset="utf-8">
+          <form action="" id="my-form1" accept-charset="utf-8">
             <div class="form-group p-5">
               <label id="email-label" for="email">Email</label>
               <input type="email" name="email" id="email" class="form-control w-50" placeholder="Introduce tu Email"
-                required >
+                required>
               <div class="help-block with-errors"></div>
               <label for="value1">Coste </label>';
               <input type="number" class="form-control w-50" id="value1" placeholder=0 value=0 required>
@@ -93,138 +94,137 @@
           </form>
         </div>
         <div id="step-3">
-          <form action="" id="my-form2"  accept-charset="utf-8">
+          <form action="" id="my-form2" accept-charset="utf-8">
             <div class="form-group p-5">
               <label id="tel-label" for="phone">Telefono</label>
-              <input type="tel" name="phone" id="phone" class="form-control w-50"" placeholder="Introduce tu telefono"
-                required >
+              <input type="tel" name="phone" id="phone" class="form-control w-50"" placeholder=" Introduce tu telefono"
+                required>
               <label for="value2">Coste </label>';
-              <input type="number" class="form-control w-50"" id="value2" placeholder=0 value=0 required>
+              <input type="number" class="form-control w-50"" id=" value2" placeholder=0 value=0 required>
               <button type="submit" id="submit2" class="submit-button" style="display: none;"> Enviar</button>
             </div>
           </form>
         </div>
         <div id="step-4">
-          <form action="" id="my-form3"accept-charset="utf-8">
+          <form action="" id="my-form3" accept-charset="utf-8">
             <div class="form-group p-5">
               <label id="terms-label" for="terms">Estoy de acuerdo con los Terminos y Condiciones</label>
-              <input type="checkbox" name="phone" id="terms" required >
+              <input type="checkbox" name="phone" id="terms" required>
               <button type="submit" id="submit3" class="submit-button " style="display: none;"> Enviar</button>
             </div>
           </form>
 
         </div>
         <div id="step-5">
-          
+
 
         </div>
       </div>
     </div>
   </div>
 
-   </div> <!-- Include jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
-      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" src="./js/jquery.smartWizard.min.js"></script>
+  </div> <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script type="text/javascript" src="./js/jquery.smartWizard.min.js"></script>
 
 
-    <script type="text/javascript">
-      $(document).ready(function () {
+  <script type="text/javascript">
+    $(document).ready(function () {
 
-        // Toolbar extra buttons
-        var btnFinish = $('<button></button>').text('Finalizar')
-          .addClass('btn ')
-          .on('click', function () { 
-            
-            confirm('¿ Quieres enviar el formulario ?')
-
-
-          });
-        var btnCancel = $('<button></button>').text('Cancelar')
-          .addClass('btn btn-danger')
-          .on('click', function () {
-            $('#smartwizard').smartWizard("reset");
-            $('#totamount').val('');
-          });
-
-        $("#smartwizard").on("stepContent", function (e, anchorObject, stepIndex, stepDirection) {
-
-
+      // Toolbar extra buttons
+      var btnFinish = $('<button id="btnFinish" ></button>').text('Finalizar')
+        .addClass('btn btn-info sw-btn-group-extra')
+        .on('click', function () {
+          confirm('¿ Quieres enviar el formulario ?')
         });
-
-        $("#smartwizard").on("leaveStep", function (e, anchorObject, currentStepIndex, nextStepIndex,
-        stepDirection) {
-          let res = true;
-          let eleForm = $("#my-form" + currentStepIndex)
-          if (stepDirection === 'forward' && eleForm) {
-            let pagebutton = $('#submit' + currentStepIndex);
-            let invalidFields = eleForm.find(":invalid");
-
-            if (!eleForm[0].checkValidity()) {
-              // If the form is invalid, submit it. The form won't actually submit;
-              // this will just cause the browser to display the native HTML5 error messages.
-              eleForm[0].reportValidity();
-              
-              return false;
-            }
-            addToTotal(currentStepIndex);
-          }
-          return res;
-        });
-
-        // Smart Wizard
-        $('#smartwizard').smartWizard({
-          selected: 0,
-          theme: 'arrows', // default, arrows, dots, progress
-          // darkMode: true,
-          transition: {
-            animation: 'slide-horizontal', // Effect on navigation, none/fade/slide-horizontal/slide-vertical/slide-swing
-          },
-          toolbarSettings: {
-            toolbarPosition: 'top', // both bottom
-            toolbarExtraButtons: [btnFinish, btnCancel]
-          },
-          keyboardSettings: {
-            keyNavigation: false, // Enable/Disable keyboard navigation(left and right keys are used if enabled)     
-          },
-          lang: { // Language variables for button
-            next: 'Siguiente',
-            previous: 'Anterior'
-          }
+      var btnCancel = $('<button></button>').text('Cancelar')
+        .addClass('btn btn-danger')
+        .on('click', function () {
+          $('#smartwizard').smartWizard("reset");
+          $('#totamount').val('');
         });
 
 
-        // Add to TotalCounter
-        function addToTotal(currentStepIndex) {
-          if (currentStepIndex === 0) {
-            let actCost = $('#value' + currentStepIndex).val();
-            if (isNaN(actCost)) {
-              actCost = 0;
-            }
-            $('#totamount').val(actCost);
+      $("#smartwizard").on("leaveStep", function (e, anchorObject, currentStepIndex, nextStepIndex,
+        stepDirection) {       
+        let res = true;
+        let eleForm = $("#my-form" + currentStepIndex)
+        if (stepDirection === 'forward' && eleForm) {
+          let pagebutton = $('#submit' + currentStepIndex);
+          let invalidFields = eleForm.find(":invalid");
 
-          }else if (currentStepIndex === 3) {       
-       
-            
-          } else {
-            let actCost = $('#value' + currentStepIndex).val();
-            let actTotal = $('#totamount').val();
-            let res = parseFloat(actCost) + parseFloat(actTotal);
-            $('#totamount').val(res);
+          if (!eleForm[0].checkValidity()) {
+            eleForm[0].reportValidity();
+            return false;
           }
-          return true;
-        };
-
-
-
+          addToTotal(currentStepIndex);
+        }
+        return res;
       });
-    </script>
+
+      $("#smartwizard").on("showStep", function (e, anchorObject, stepNumber, stepDirection) {
+        if($('button.sw-btn-next').hasClass('disabled')){
+				$('.sw-btn-group-extra').show(); // show the button extra only in the last page
+			}else{
+				$('.sw-btn-group-extra').hide();				
+			}
+      });
+
+      // Smart Wizard
+      $('#smartwizard').smartWizard({
+        selected: 0,
+
+        theme: 'arrows', // default, arrows, dots, progress
+        // darkMode: true,
+        transition: {
+          animation: 'slide-horizontal', // Effect on navigation, none/fade/slide-horizontal/slide-vertical/slide-swing
+        },
+        toolbarSettings: {
+          toolbarPosition: 'top', // both bottom
+          toolbarExtraButtons: [btnFinish,btnCancel]
+        },
+        keyboardSettings: {
+          keyNavigation: false, // Enable/Disable keyboard navigation(left and right keys are used if enabled)     
+        },
+        lang: { // Language variables for button
+          next: 'Siguiente',
+          previous: 'Anterior'
+        }
+      });
+
+
+      // Add to TotalCounter
+      function addToTotal(currentStepIndex) {
+        if (currentStepIndex === 0) {
+          let actCost = $('#value' + currentStepIndex).val();
+          if (isNaN(actCost)) {
+            actCost = 0;
+          }
+          $('#totamount').val(actCost);
+
+        } else if (currentStepIndex >= 3) {
+
+
+        } else {
+          let actCost = $('#value' + currentStepIndex).val();
+          let actTotal = $('#totamount').val();
+          let res = parseFloat(actCost) + parseFloat(actTotal);
+          $('#totamount').val(res);
+        }
+        return true;
+      };
+
+
+
+    });
+  </script>
 </body>
 
 </html>
