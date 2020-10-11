@@ -25,7 +25,7 @@
 <body>
 
   <br />
-  <div class="container mt-5 mb-5">
+  <div class="container mt-5 mb-5">   
 
 
     <!-- SmartWizard html -->
@@ -52,6 +52,11 @@
             <strong>Step 4</strong> <br>Descripcion paso 4
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#step-5">
+            <strong>Step 5</strong> <br>Descripcion paso 5
+          </a>
+        </li>
       </ul>
 
 
@@ -63,51 +68,54 @@
       <div class="tab-content">
 
         <div id="step-1">
-          <form action="" id="my-form0" method="post" accept-charset="utf-8">
+          <form action="" id="my-form0"  accept-charset="utf-8">
             <div class="form-group">
               <label id="name-label" for="name">Nombre</label>
-              <input type="text" name="name" id="name" class="form-control" placeholder="Introduce tu nombre" required>
+              <input type="text" name="name" id="name" class="form-control w-50" placeholder="Introduce tu nombre" required>
               <div class="help-block with-errors"></div>
               <label for="value0">Coste </label>';
-              <input type="number" class="form-control" id="value0" placeholder=0 value=0 required>
+              <input type="number" class="form-control w-50" id="value0" placeholder=0 value=0 required>
               <button type="submit" id="submit0" class="submit-button" style="display: none;"> Enviar</button>
             </div>
           </form>
         </div>
         <div id="step-2">
-          <form action="" id="my-form1" method="post" accept-charset="utf-8">
+          <form action="" id="my-form1"  accept-charset="utf-8">
             <div class="form-group">
               <label id="email-label" for="email">Email</label>
-              <input type="email" name="email" id="email" class="form-control" placeholder="Introduce tu Email"
-                required />
+              <input type="email" name="email" id="email" class="form-control w-50" placeholder="Introduce tu Email"
+                required >
               <div class="help-block with-errors"></div>
               <label for="value1">Coste </label>';
-              <input type="number" class="form-control" id="value1" placeholder=0 value=0 required>
+              <input type="number" class="form-control w-50" id="value1" placeholder=0 value=0 required>
               <button type="submit" id="submi1" class="submit-button" style="display: none;"> Enviar</button>
             </div>
           </form>
         </div>
         <div id="step-3">
-          <form action="" id="my-form2" method="post" accept-charset="utf-8">
+          <form action="" id="my-form2"  accept-charset="utf-8">
             <div class="form-group">
               <label id="tel-label" for="phone">Telefono</label>
-              <input type="tel" name="phone" id="phone" class="form-control" placeholder="Introduce tu telefono"
-                required />
+              <input type="tel" name="phone" id="phone" class="form-control w-50"" placeholder="Introduce tu telefono"
+                required >
               <label for="value2">Coste </label>';
-              <input type="number" class="form-control" id="value2" placeholder=0 value=0 required>
+              <input type="number" class="form-control w-50"" id="value2" placeholder=0 value=0 required>
               <button type="submit" id="submit2" class="submit-button" style="display: none;"> Enviar</button>
             </div>
           </form>
         </div>
         <div id="step-4">
-          <form action="" id="my-form3" method="post" accept-charset="utf-8">
+          <form action="" id="my-form3"accept-charset="utf-8">
             <div class="form-group">
               <label id="terms-label" for="terms">Estoy de acuerdo con los TyC</label>
-              <input type="checkbox" name="phone" id="terms" data-error="Por favor acepta los Términos y Condiciones"
-                required />
-              <button type="submit" id="submit3" class="submit-button" style="display: none;"> Enviar</button>
+              <input type="checkbox" name="phone" id="terms" required >
+              <button type="submit" id="submit3" class="submit-button " style="display: none;"> Enviar</button>
             </div>
           </form>
+
+        </div>
+        <div id="step-5">
+          
 
         </div>
       </div>
@@ -132,7 +140,9 @@
         // Toolbar extra buttons
         var btnFinish = $('<button></button>').text('Finalizar')
           .addClass('btn ')
-          .on('click', function () {
+          .on('click', function () { 
+            
+            confirm('¿ Quieres enviar el formulario ?')
 
 
           });
@@ -159,7 +169,8 @@
             if (!eleForm[0].checkValidity()) {
               // If the form is invalid, submit it. The form won't actually submit;
               // this will just cause the browser to display the native HTML5 error messages.
-              pagebutton.click();
+              eleForm[0].reportValidity();
+              
               return false;
             }
             addToTotal(currentStepIndex);
@@ -198,6 +209,9 @@
             }
             $('#totamount').val(actCost);
 
+          }else if (currentStepIndex === 3) {       
+       
+            
           } else {
             let actCost = $('#value' + currentStepIndex).val();
             let actTotal = $('#totamount').val();
