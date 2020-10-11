@@ -100,7 +100,7 @@
               <input type="tel" name="phone" id="phone" class="form-control w-50"" placeholder=" Introduce tu telefono"
                 required>
               <label for="value2">Coste </label>';
-              <input type="number" class="form-control w-50"" id=" value2" placeholder=0 value=0 required>
+              <input type="number" class="form-control w-50"" id="value2" placeholder=0 value=0 required>
               <button type="submit" id="submit2" class="submit-button" style="display: none;"> Enviar</button>
             </div>
           </form>
@@ -170,7 +170,7 @@
       });
 
       $("#smartwizard").on("showStep", function (e, anchorObject, stepNumber, stepDirection) {
-        if($('button.sw-btn-next').hasClass('disabled')){
+        if($('.sw-btn-next').hasClass('disabled')){
 				$('.sw-btn-group-extra').show(); // show the button extra only in the last page
 			}else{
 				$('.sw-btn-group-extra').hide();				
